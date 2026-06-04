@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: account-transfer
+
+fbi:
+  auth:
+     api-key: ${FIB_API_KEY}

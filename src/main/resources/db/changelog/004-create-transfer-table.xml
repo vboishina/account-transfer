@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+    <changeSet id="004-create-transfer-table" author="admin">
+        <createTable
+                schemaName="ACCOUNT_TRANSFER"
+                tableName="transfer">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="idempotency_key" type="VARCHAR(64)">
+                <constraints unique="true"/>
+            </column>
+            <column name="from_iban" type="VARCHAR(34)"/>
+            <column name="to_iban" type="VARCHAR(34)"/>
+            <column name="amount" type="DECIMAL(15,2)"/>
+            <column name="currency" type="VARCHAR(3)"/>
+            <column name="fx_rate" type="DECIMAL(10,4)"/>
+            <column name="created_at" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
