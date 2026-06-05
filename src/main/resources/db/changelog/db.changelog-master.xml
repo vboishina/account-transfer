@@ -11,6 +11,5 @@
     <include file="003-seed-accounts.xml" relativeToChangelogFile="true"/>
     <include file="004-create-transfer-table.xml" relativeToChangelogFile="true"/>
     <include file="005-create-ledger-table.xml" relativeToChangelogFile="true"/>
-    <include file="006-create-idempotency-table.xml" relativeToChangelogFile="true"/>
-    <include file="007-create-standing-orders-table.xml" relativeToChangelogFile="true"/>
+    <include file="006-create-standing-orders-table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

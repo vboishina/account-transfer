@@ -1,4 +1,4 @@
-package com.fbi.transfer.security;
+package com.fbi.transfer.filter.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

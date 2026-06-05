@@ -1,6 +1,5 @@
 package com.fbi.transfer.service;
 
-import com.fbi.transfer.domain.Transfer;
 import com.fbi.transfer.dto.TransferRequest;
 import com.fbi.transfer.dto.TransferResponse;
 
