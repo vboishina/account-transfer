@@ -1,0 +1,375 @@
+{
+  "info": {
+    "_postman_id": "d4a121f6-8e17-4abd-a537-f861facdaab1",
+    "name": "account_transfer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6200578"
+  },
+  "item": [
+    {
+      "name": "accounts",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "admin123",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-FIB-AUTH",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/accounts",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "accounts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "transfers",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "admin123",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-FIB-AUTH",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Idempotency-Key",
+            "value": "3c2d7f91-5a84-4f2b-b1d8-9e6c4a7f1230'",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fromIban\": \"BG01FINV002\",\r\n  \"toIban\": \"BG01FINV003\",\r\n  \"amount\": 100\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/transfers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "transfers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "transferById",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/transfers/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "transfers",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "standing-orders",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/standing-orders?X-FIB-AUTH=admin123",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "standing-orders"
+          ],
+          "query": [
+            {
+              "key": "X-FIB-AUTH",
+              "value": "admin123",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create_standing-order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fromIban\": \"FZ62NYKRAUEZ6HEJ1CTATQ1\",\r\n  \"toIban\": \"DW32SYLTE8APL72CQ4V2V3IS9JDQR8VS\",\r\n  \"amount\": 0.01,\r\n  \"executionDate\": \"2026-06-05\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/standing-orders",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "standing-orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stendingOrderById",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fromIban\": \"FZ62NYKRAUEZ6HEJ1CTATQ1\",\r\n  \"toIban\": \"DW32SYLTE8APL72CQ4V2V3IS9JDQR8VS\",\r\n  \"amount\": 0.01,\r\n  \"executionDate\": \"2026-06-05\"\r\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/standing-orders/1?X-FIB-AUTH=admin123",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "standing-orders",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "X-FIB-AUTH",
+              "value": "admin123",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteStendingOrderById",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/standing-orders/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "standing-orders",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ledger",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/ledger?iban=BG01FINV002&page=0&size=100",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "ledger"
+          ],
+          "query": [
+            {
+              "key": "iban",
+              "value": "BG01FINV002",
+              "type": "text"
+            },
+            {
+              "key": "page",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "size",
+              "value": "100",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "accountByIBAN",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-FIB-AUTH",
+            "value": "admin123",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/accounts?iban=BG01FINV002",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "accounts"
+          ],
+          "query": [
+            {
+              "key": "iban",
+              "value": "BG01FINV002",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "X-FIB-AUTH",
+      "value": ""
+    },
+    {
+      "key": "Accept",
+      "value": ""
+    },
+    {
+      "key": "transferId",
+      "value": ""
+    },
+    {
+      "key": "standingOrderId\"",
+      "value": ""
+    }
+  ]
+}
