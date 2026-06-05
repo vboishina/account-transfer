@@ -6,6 +6,19 @@ The api key is required.
 Run with: mvn spring-boot:run -Dspring-boot.run.arguments="--fbi.auth.api-key=your_real_key"
 If you access via swagger - set authurisation there.
 
+1) clone progect
+2) navigate to project dir
+account-transfer> docker compose up -d && docker compose logs -f
+3) success  :  will see in logs:
+    account-transfer-1  | [INFO] Results:
+   account-transfer-1  | [INFO]
+   account-transfer-1  | [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+   account-transfer-1  | [INFO]
+   account-transfer-1  | [INFO]
+   account-transfer-1  | [INFO] --- failsafe:3.5.2:verify (default) @ account-transfer
+
+4) you can access and test it via: http://localhost:8080/swagger-ui/index.html
+5) !!! authorize !!!
 
 API Specification:
 ------------------------------------------------------------------------------------------------

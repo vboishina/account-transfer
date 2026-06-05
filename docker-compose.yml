@@ -1,0 +1,15 @@
+services:
+  account-transfer:
+    image: maven:3.9-eclipse-temurin-25
+
+    working_dir: /app
+
+    volumes:
+      - .:/app
+
+    command: >
+      mvn clean install spring-boot:run
+      -Dspring-boot.run.arguments="--fbi.auth.api-key=admin123"
+
+    ports:
+      - "8080:8080"
