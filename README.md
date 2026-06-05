@@ -6,7 +6,7 @@ The api key is required.
 Run with: mvn spring-boot:run -Dspring-boot.run.arguments="--fbi.auth.api-key=your_real_key"
 If you access via swagger - set authurisation there.
 
-1) clone progect
+1) clone progect : git clone https://github.com/vboishina/account-transfer.git
 2) navigate to project dir
 account-transfer> docker compose up -d && docker compose logs -f
 3) success  :  will see in logs:
